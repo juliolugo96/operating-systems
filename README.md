@@ -1,6 +1,11 @@
 # Operating Systems 
 Operating System's project oriented to synchronization techniques using C and POSIX functions.
 
+# Developers
+
+- Julio Lugo V-26.373.468
+- Jenny Remolina  V-20.434.745
+
 ## Run
 
 1. Open `main/` directory.
