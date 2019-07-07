@@ -20,7 +20,7 @@ void usage()
     smooth_flush(words);
     char menu[] = "\tPlease choose an option to start your simulations tests\n\n";
     smooth_flush(menu);
-    char options[] = "\t[1]\tSync with Critical Section --> ./main.exe 1 [mean value]\n\n\t[2]\tSync with Client Server --> ./sim.exe 2 [mean value]\n\n";
+    char options[] = "\t[1]\tSync with Critical Section --> ./script.sh 1 [mean value]\n\n\t[2]\tSync with Client Server --> ./script.sh 2 [mean value]\n\n";
     smooth_flush(options);
 }
 
