@@ -50,11 +50,11 @@ int init(int selection, float mean)
             successful_exec();
             return SUCCESS_CODE;
         }
-            
+
         else
         {
             failed_exec();
-            return ERROR_CODE;    
+            return ERROR_CODE;
         }
     }
 }
@@ -72,6 +72,8 @@ int main(int argc, char *argv[])
     srand(time(NULL));
 
     init(atoi(argv[1]), atof(argv[2]));
+
+    print_stats();
 
     return 0;
 }

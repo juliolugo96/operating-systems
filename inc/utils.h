@@ -23,11 +23,20 @@
 #define SEM_ID 0x10101011
 
 pthread_t tid[4];
+pthread_t time_id;
+pthread_t server, client[4];
 extern int via;
 pthread_mutex_t lock;
 
-struct arg_struct {
+struct arg_struct
+{
     float mean;
+    int via_id;
+};
+
+struct server_struct
+{
+    int flag;
     int via_id;
 };
 
@@ -38,11 +47,19 @@ enum sync_case
     CLIENT_SERVER     /**< enum value Client server section option. */
 };
 
+void print_stats();
+
 double ran_expo(double);
-//RANDTYPE poisson(double);
 int handle_option_selected(int, float);
-void* generate_input(void*);
-void* via_control(void*);
+
+void *time_mngr(void *);
+
+void *generate_input(void *);
+void *via_control(void *);
+
+void *server_thread(void *);
+void *client_thread(void *);
+
 int sim_critical_section(float);
 int sim_client_server(float);
 

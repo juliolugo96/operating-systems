@@ -1,1 +1,1 @@
-../bin/main.exe 1 0.3
+../bin/main.exe 2 0.3
