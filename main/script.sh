@@ -1,1 +1,3 @@
-../bin/main.exe 2 0.3
+#!/bin/bash
+
+../bin/main.exe $1 $2
