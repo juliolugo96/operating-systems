@@ -38,14 +38,6 @@ void print_stats()
     printf("Total cars generated: %d\n", counter);
 }
 
-/** 
- * Implementation straight from 
- * http://en.wikipedia.org/wiki/Poisson_distribution#Generating_Poisson-distributed_random_variables
- * which credits Knuth.
- * @param lambda mean value
- * @return Random number generated
- * Time complexity is O(lambda), which is not optimal.
-*/
 double ran_expo(double lambda)
 {
     double u;
@@ -53,13 +45,6 @@ double ran_expo(double lambda)
     return -log(1 - u) / lambda;
 }
 
-/**
- * Reactive-like function that controls option selected in main menu.
- * @param op option selected in main menu.
- * @see sim_critical_section()
- * @see sim_client_server()
- * @return Code indicating execution status
- */
 int handle_option_selected(int op, float mean)
 {
     switch (op)

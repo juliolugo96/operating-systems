@@ -1,0 +1,346 @@
+\hypertarget{utils_8h}{}\section{inc/utils.h File Reference}
+\label{utils_8h}\index{inc/utils.\+h@{inc/utils.\+h}}
+
+
+File containing definitions and declarations of all functions required.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$limits.\+h$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$sys/shm.\+h$>$}\\*
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+{\ttfamily \#include $<$pthread.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+Include dependency graph for utils.\+h\+:
+% FIG 0
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structarg__struct}{arg\+\_\+struct}
+\item 
+struct \hyperlink{structserver__struct}{server\+\_\+struct}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries true}~1\hypertarget{utils_8h_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{}\label{utils_8h_a41f9c5fb8b08eb5dc3edce4dcb37fee7}
+
+\item 
+\#define {\bfseries false}~0\hypertarget{utils_8h_a65e9886d74aaee76545e83dd09011727}{}\label{utils_8h_a65e9886d74aaee76545e83dd09011727}
+
+\item 
+\#define {\bfseries E\+R\+R\+O\+R\+\_\+\+C\+O\+DE}~-\/1\hypertarget{utils_8h_aca162232980dee2d78056fc244ac84fb}{}\label{utils_8h_aca162232980dee2d78056fc244ac84fb}
+
+\item 
+\#define {\bfseries S\+U\+C\+C\+E\+S\+S\+\_\+\+C\+O\+DE}~0\hypertarget{utils_8h_af552599b46244712be9567e1c81b099b}{}\label{utils_8h_af552599b46244712be9567e1c81b099b}
+
+\item 
+\#define {\bfseries G\+O\+O\+D\+R\+A\+ND}~random()\hypertarget{utils_8h_a80b934ba5dcd3e7581b3c727ab57e768}{}\label{utils_8h_a80b934ba5dcd3e7581b3c727ab57e768}
+
+\item 
+\#define {\bfseries G\+O\+O\+D\+R\+A\+N\+D\+M\+AX}~I\+N\+T\+\_\+\+M\+AX\hypertarget{utils_8h_ad74f5caefc2c4b3172c1589b734dd8a1}{}\label{utils_8h_ad74f5caefc2c4b3172c1589b734dd8a1}
+
+\item 
+\#define {\bfseries R\+A\+N\+D\+T\+Y\+PE}~short\hypertarget{utils_8h_a30b8ced3302a11d983a4da1272fec022}{}\label{utils_8h_a30b8ced3302a11d983a4da1272fec022}
+
+\item 
+\#define {\bfseries ID}~999\hypertarget{utils_8h_a77ceac8d6af195fe72f95f6afd87c45e}{}\label{utils_8h_a77ceac8d6af195fe72f95f6afd87c45e}
+
+\item 
+\#define {\bfseries R\+O\+U\+TE}~\char`\"{}/bin/lspci\char`\"{}\hypertarget{utils_8h_a5b5cba0b0b9b73eb1ce8afda91fe7be7}{}\label{utils_8h_a5b5cba0b0b9b73eb1ce8afda91fe7be7}
+
+\item 
+\#define {\bfseries S\+E\+M\+\_\+\+ID}~0x10101011\hypertarget{utils_8h_a7c0e6dd0a1214cc8d16bffe8a8f8cc23}{}\label{utils_8h_a7c0e6dd0a1214cc8d16bffe8a8f8cc23}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{utils_8h_a86d843a4ab953623d90012a2ac120619}{sync\+\_\+case} \{ \hyperlink{utils_8h_a86d843a4ab953623d90012a2ac120619a7a10b5d68d31711288e1fe0fa17dbf4f}{E\+X\+IT}, 
+\hyperlink{utils_8h_a86d843a4ab953623d90012a2ac120619aff283559db8b3f7a59a63f50cc7b9eb1}{C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+S\+E\+C\+T\+I\+ON}, 
+\hyperlink{utils_8h_a86d843a4ab953623d90012a2ac120619adf34124357ec737a982bcc47dfd6f35a}{C\+L\+I\+E\+N\+T\+\_\+\+S\+E\+R\+V\+ER}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{utils_8h_a79e02a1b8dac4ec401e31a9ca380a65c}{print\+\_\+stats} ()\hypertarget{utils_8h_a79e02a1b8dac4ec401e31a9ca380a65c}{}\label{utils_8h_a79e02a1b8dac4ec401e31a9ca380a65c}
+
+\begin{DoxyCompactList}\small\item\em Simple helper function for final print. \end{DoxyCompactList}\item 
+double \hyperlink{utils_8h_aa02f9f64616efd8c60ebfa2f6a8e17f9}{ran\+\_\+expo} (double)
+\begin{DoxyCompactList}\small\item\em Random number generator Implementation straight from \href{http://en.wikipedia.org/wiki/Poisson_distribution#Generating_Poisson-distributed_random_variables}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Poisson\+\_\+distribution\#\+Generating\+\_\+\+Poisson-\/distributed\+\_\+random\+\_\+variables} which credits Knuth. \end{DoxyCompactList}\item 
+int \hyperlink{utils_8h_ae01e121a824744b6fa0c876cc3f995b6}{handle\+\_\+option\+\_\+selected} (int, float)
+\begin{DoxyCompactList}\small\item\em Reactive-\/like function that controls option selected in main menu. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{utils_8h_abd6b2919363cd007681a61e79a3d0c43}{time\+\_\+mngr} (void $\ast$)
+\item 
+void $\ast$ \hyperlink{utils_8h_af513a67433690631347da8e2f45e53a2}{generate\+\_\+input} (void $\ast$)\hypertarget{utils_8h_af513a67433690631347da8e2f45e53a2}{}\label{utils_8h_af513a67433690631347da8e2f45e53a2}
+
+\begin{DoxyCompactList}\small\item\em Entity generator every random second. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{utils_8h_a3b4488c5156852d4377cf03c3d52b44a}{via\+\_\+control} (void $\ast$)
+\begin{DoxyCompactList}\small\item\em Via thread. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{utils_8h_a8ddd40bbe8f9c0af8c7cfdea9dffbf83}{server\+\_\+thread} (void $\ast$)
+\begin{DoxyCompactList}\small\item\em Via thread. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{utils_8h_ac60bb282f88b028d33dd5f64c02f652b}{client\+\_\+thread} (void $\ast$)
+\begin{DoxyCompactList}\small\item\em Via thread. \end{DoxyCompactList}\item 
+int \hyperlink{utils_8h_a237e1fa58f48db96cd2c99a12a422a44}{sim\+\_\+critical\+\_\+section} (float)
+\begin{DoxyCompactList}\small\item\em Via thread. \end{DoxyCompactList}\item 
+int \hyperlink{utils_8h_ad876c90cdd65eb0b5241fa0d9cdca25a}{sim\+\_\+client\+\_\+server} (float)
+\begin{DoxyCompactList}\small\item\em Via thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+pthread\+\_\+t {\bfseries tid} \mbox{[}4\mbox{]}\hypertarget{utils_8h_af38ae5d22a63851b581f9cff39beb3eb}{}\label{utils_8h_af38ae5d22a63851b581f9cff39beb3eb}
+
+\item 
+pthread\+\_\+t {\bfseries time\+\_\+id}\hypertarget{utils_8h_af1b7912ec96b78af8be541a89a7ee5db}{}\label{utils_8h_af1b7912ec96b78af8be541a89a7ee5db}
+
+\item 
+pthread\+\_\+t {\bfseries server}\hypertarget{utils_8h_a5c83de9b036b0b00d4563b644d4da05a}{}\label{utils_8h_a5c83de9b036b0b00d4563b644d4da05a}
+
+\item 
+pthread\+\_\+t {\bfseries client} \mbox{[}4\mbox{]}\hypertarget{utils_8h_aeb7c1a8b1270fccabcb7c336b7f5bf59}{}\label{utils_8h_aeb7c1a8b1270fccabcb7c336b7f5bf59}
+
+\item 
+int {\bfseries via}\hypertarget{utils_8h_acc0b246b6120e7b3555efa890a955a9d}{}\label{utils_8h_acc0b246b6120e7b3555efa890a955a9d}
+
+\item 
+pthread\+\_\+mutex\+\_\+t {\bfseries lock}\hypertarget{utils_8h_a0abaf4b5d42c4e5d19190035fade3599}{}\label{utils_8h_a0abaf4b5d42c4e5d19190035fade3599}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+File containing definitions and declarations of all functions required. 
+
+\begin{DoxyAuthor}{Author}
+Julio Manuel Paredes Lugo 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+5 Jul 2019 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See also}
+\href{http://fnch.users.sourceforge.net/doxygen_c.html}{\tt http\+://fnch.\+users.\+sourceforge.\+net/doxygen\+\_\+c.\+html} 
+\end{DoxySeeAlso}
+
+
+\subsection{Enumeration Type Documentation}
+\index{utils.\+h@{utils.\+h}!sync\+\_\+case@{sync\+\_\+case}}
+\index{sync\+\_\+case@{sync\+\_\+case}!utils.\+h@{utils.\+h}}
+\subsubsection[{\texorpdfstring{sync\+\_\+case}{sync_case}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf sync\+\_\+case}}\hypertarget{utils_8h_a86d843a4ab953623d90012a2ac120619}{}\label{utils_8h_a86d843a4ab953623d90012a2ac120619}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{E\+X\+IT@{E\+X\+IT}!utils.\+h@{utils.\+h}}\index{utils.\+h@{utils.\+h}!E\+X\+IT@{E\+X\+IT}}\item[{\em 
+E\+X\+IT\hypertarget{utils_8h_a86d843a4ab953623d90012a2ac120619a7a10b5d68d31711288e1fe0fa17dbf4f}{}\label{utils_8h_a86d843a4ab953623d90012a2ac120619a7a10b5d68d31711288e1fe0fa17dbf4f}
+}]enum value Exit option. \index{C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+S\+E\+C\+T\+I\+ON@{C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+S\+E\+C\+T\+I\+ON}!utils.\+h@{utils.\+h}}\index{utils.\+h@{utils.\+h}!C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+S\+E\+C\+T\+I\+ON@{C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+S\+E\+C\+T\+I\+ON}}\item[{\em 
+C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+S\+E\+C\+T\+I\+ON\hypertarget{utils_8h_a86d843a4ab953623d90012a2ac120619aff283559db8b3f7a59a63f50cc7b9eb1}{}\label{utils_8h_a86d843a4ab953623d90012a2ac120619aff283559db8b3f7a59a63f50cc7b9eb1}
+}]enum value Critical section option. \index{C\+L\+I\+E\+N\+T\+\_\+\+S\+E\+R\+V\+ER@{C\+L\+I\+E\+N\+T\+\_\+\+S\+E\+R\+V\+ER}!utils.\+h@{utils.\+h}}\index{utils.\+h@{utils.\+h}!C\+L\+I\+E\+N\+T\+\_\+\+S\+E\+R\+V\+ER@{C\+L\+I\+E\+N\+T\+\_\+\+S\+E\+R\+V\+ER}}\item[{\em 
+C\+L\+I\+E\+N\+T\+\_\+\+S\+E\+R\+V\+ER\hypertarget{utils_8h_a86d843a4ab953623d90012a2ac120619adf34124357ec737a982bcc47dfd6f35a}{}\label{utils_8h_a86d843a4ab953623d90012a2ac120619adf34124357ec737a982bcc47dfd6f35a}
+}]enum value Client server section option. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{utils.\+h@{utils.\+h}!client\+\_\+thread@{client\+\_\+thread}}
+\index{client\+\_\+thread@{client\+\_\+thread}!utils.\+h@{utils.\+h}}
+\subsubsection[{\texorpdfstring{client\+\_\+thread(void $\ast$)}{client_thread(void *)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ client\+\_\+thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{utils_8h_ac60bb282f88b028d33dd5f64c02f652b}{}\label{utils_8h_ac60bb282f88b028d33dd5f64c02f652b}
+
+
+Via thread. 
+
+Every via has been modeled using a single thread for each one. In this case, every thread is a client.
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & a polymorphic pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{utils_8h_ad876c90cdd65eb0b5241fa0d9cdca25a}{sim\+\_\+client\+\_\+server()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Code indicating execution status 
+\end{DoxyReturn}
+\index{utils.\+h@{utils.\+h}!handle\+\_\+option\+\_\+selected@{handle\+\_\+option\+\_\+selected}}
+\index{handle\+\_\+option\+\_\+selected@{handle\+\_\+option\+\_\+selected}!utils.\+h@{utils.\+h}}
+\subsubsection[{\texorpdfstring{handle\+\_\+option\+\_\+selected(int, float)}{handle_option_selected(int, float)}}]{\setlength{\rightskip}{0pt plus 5cm}int handle\+\_\+option\+\_\+selected (
+\begin{DoxyParamCaption}
+\item[{int}]{, }
+\item[{float}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{utils_8h_ae01e121a824744b6fa0c876cc3f995b6}{}\label{utils_8h_ae01e121a824744b6fa0c876cc3f995b6}
+
+
+Reactive-\/like function that controls option selected in main menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & option selected in main menu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{utils_8h_a237e1fa58f48db96cd2c99a12a422a44}{sim\+\_\+critical\+\_\+section()} 
+
+\hyperlink{utils_8h_ad876c90cdd65eb0b5241fa0d9cdca25a}{sim\+\_\+client\+\_\+server()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Code indicating execution status 
+\end{DoxyReturn}
+\index{utils.\+h@{utils.\+h}!ran\+\_\+expo@{ran\+\_\+expo}}
+\index{ran\+\_\+expo@{ran\+\_\+expo}!utils.\+h@{utils.\+h}}
+\subsubsection[{\texorpdfstring{ran\+\_\+expo(double)}{ran_expo(double)}}]{\setlength{\rightskip}{0pt plus 5cm}double ran\+\_\+expo (
+\begin{DoxyParamCaption}
+\item[{double}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{utils_8h_aa02f9f64616efd8c60ebfa2f6a8e17f9}{}\label{utils_8h_aa02f9f64616efd8c60ebfa2f6a8e17f9}
+
+
+Random number generator Implementation straight from \href{http://en.wikipedia.org/wiki/Poisson_distribution#Generating_Poisson-distributed_random_variables}{\tt http\+://en.\+wikipedia.\+org/wiki/\+Poisson\+\_\+distribution\#\+Generating\+\_\+\+Poisson-\/distributed\+\_\+random\+\_\+variables} which credits Knuth. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lambda} & mean value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Random number generated Time complexity is O(lambda), which is not optimal. 
+\end{DoxyReturn}
+\index{utils.\+h@{utils.\+h}!server\+\_\+thread@{server\+\_\+thread}}
+\index{server\+\_\+thread@{server\+\_\+thread}!utils.\+h@{utils.\+h}}
+\subsubsection[{\texorpdfstring{server\+\_\+thread(void $\ast$)}{server_thread(void *)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ server\+\_\+thread (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{utils_8h_a8ddd40bbe8f9c0af8c7cfdea9dffbf83}{}\label{utils_8h_a8ddd40bbe8f9c0af8c7cfdea9dffbf83}
+
+
+Via thread. 
+
+A Singleton-\/styled server which handles access permissions to the shared area
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & a polymorphic pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{utils_8h_ad876c90cdd65eb0b5241fa0d9cdca25a}{sim\+\_\+client\+\_\+server()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Code indicating execution status 
+\end{DoxyReturn}
+\index{utils.\+h@{utils.\+h}!sim\+\_\+client\+\_\+server@{sim\+\_\+client\+\_\+server}}
+\index{sim\+\_\+client\+\_\+server@{sim\+\_\+client\+\_\+server}!utils.\+h@{utils.\+h}}
+\subsubsection[{\texorpdfstring{sim\+\_\+client\+\_\+server(float)}{sim_client_server(float)}}]{\setlength{\rightskip}{0pt plus 5cm}int sim\+\_\+client\+\_\+server (
+\begin{DoxyParamCaption}
+\item[{float}]{mean}
+\end{DoxyParamCaption}
+)}\hypertarget{utils_8h_ad876c90cdd65eb0b5241fa0d9cdca25a}{}\label{utils_8h_ad876c90cdd65eb0b5241fa0d9cdca25a}
+
+
+Via thread. 
+
+Client server threads set\+Up
+
+
+\begin{DoxyParams}{Parameters}
+{\em float} & a mean value \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{utils_8h_a237e1fa58f48db96cd2c99a12a422a44}{sim\+\_\+critical\+\_\+section()} 
+
+\hyperlink{utils_8h_ad876c90cdd65eb0b5241fa0d9cdca25a}{sim\+\_\+client\+\_\+server()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Code indicating execution status
+\end{DoxyReturn}
+Simulate Client Server syncronization method for several processes. \begin{DoxySeeAlso}{See also}
+\hyperlink{utils_8h_a237e1fa58f48db96cd2c99a12a422a44}{sim\+\_\+critical\+\_\+section()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Code indicating execution status 
+\end{DoxyReturn}
+\index{utils.\+h@{utils.\+h}!sim\+\_\+critical\+\_\+section@{sim\+\_\+critical\+\_\+section}}
+\index{sim\+\_\+critical\+\_\+section@{sim\+\_\+critical\+\_\+section}!utils.\+h@{utils.\+h}}
+\subsubsection[{\texorpdfstring{sim\+\_\+critical\+\_\+section(float)}{sim_critical_section(float)}}]{\setlength{\rightskip}{0pt plus 5cm}int sim\+\_\+critical\+\_\+section (
+\begin{DoxyParamCaption}
+\item[{float}]{mean}
+\end{DoxyParamCaption}
+)}\hypertarget{utils_8h_a237e1fa58f48db96cd2c99a12a422a44}{}\label{utils_8h_a237e1fa58f48db96cd2c99a12a422a44}
+
+
+Via thread. 
+
+Critical section threads set\+Up
+
+
+\begin{DoxyParams}{Parameters}
+{\em float} & a mean value \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{utils_8h_a237e1fa58f48db96cd2c99a12a422a44}{sim\+\_\+critical\+\_\+section()} 
+
+\hyperlink{utils_8h_ad876c90cdd65eb0b5241fa0d9cdca25a}{sim\+\_\+client\+\_\+server()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Code indicating execution status
+\end{DoxyReturn}
+Simulate Critical section syncronization method for several processes. \begin{DoxySeeAlso}{See also}
+\hyperlink{utils_8h_ad876c90cdd65eb0b5241fa0d9cdca25a}{sim\+\_\+client\+\_\+server()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Code indicating execution status 
+\end{DoxyReturn}
+\index{utils.\+h@{utils.\+h}!time\+\_\+mngr@{time\+\_\+mngr}}
+\index{time\+\_\+mngr@{time\+\_\+mngr}!utils.\+h@{utils.\+h}}
+\subsubsection[{\texorpdfstring{time\+\_\+mngr(void $\ast$)}{time_mngr(void *)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ time\+\_\+mngr (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{utils_8h_abd6b2919363cd007681a61e79a3d0c43}{}\label{utils_8h_abd6b2919363cd007681a61e79a3d0c43}
+Global clock. 
+\begin{DoxyParams}{Parameters}
+{\em op} & a polymorphic pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{utils_8h_a237e1fa58f48db96cd2c99a12a422a44}{sim\+\_\+critical\+\_\+section()} 
+
+\hyperlink{utils_8h_ad876c90cdd65eb0b5241fa0d9cdca25a}{sim\+\_\+client\+\_\+server()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Code indicating execution status 
+\end{DoxyReturn}
+\index{utils.\+h@{utils.\+h}!via\+\_\+control@{via\+\_\+control}}
+\index{via\+\_\+control@{via\+\_\+control}!utils.\+h@{utils.\+h}}
+\subsubsection[{\texorpdfstring{via\+\_\+control(void $\ast$)}{via_control(void *)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ via\+\_\+control (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{utils_8h_a3b4488c5156852d4377cf03c3d52b44a}{}\label{utils_8h_a3b4488c5156852d4377cf03c3d52b44a}
+
+
+Via thread. 
+
+Every via has been modeled using a single thread for each one. This is used in critical section simulation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & a polymorphic pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{utils_8h_a237e1fa58f48db96cd2c99a12a422a44}{sim\+\_\+critical\+\_\+section()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Code indicating execution status 
+\end{DoxyReturn}
